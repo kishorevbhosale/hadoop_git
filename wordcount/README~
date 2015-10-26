@@ -1,0 +1,27 @@
+This is a hello world program of Hadoop.
+Word Count Program:
+This program counts the occurrences of the number of words in a file.
+
+Basically, there are three classes for writing any hadoop mapreduce program.
+1) Driver class, i.e. main class.
+2) The mapper class used to map the input to different systems.
+3) Reducer class used to collect output from different systems to single systems.
+There are old API and a new API for Hadoop with small changes.
+This program is written in the new API.
+I/P: Sample text file containing any readable data. 
+
+How to Run:
+
+go to directory where your code is available and openterminal 
+
+1) compile all java files:
+   $javac -classpath $HADOOP_HOME/hadoop-core.jar *.java
+
+2) Create jar file: (hadoop can run or execute jar only)
+   $ jar cvf Driver.jar *.class
+
+3) Running the jar file:
+   // hadoop jar "JarFileName.jar" "NameOfMainClassFile" "InputPathforFile(HDFS location)" "OutputPath in hdfs" 	
+   $ hadoop jar Driver.jar Driver /kb/wcinput.txt /wcoutput
+
+

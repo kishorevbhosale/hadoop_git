@@ -9,3 +9,25 @@ Basically, there are three classes for writing any hadoop mapreduce program.
 There are old API and a new API for Hadoop with small changes.
 This program is written in the new API.
 I/P: Sample text file containing any readable data. 
+
+How to Run:
+
+a) Start Hadoop: $start-all.sh
+   verify using jps command 
+
+b) move wcinput.txt file form local file system to hdfs
+   $hadoop fs -put /home/kb/wcinput.txt /wc
+
+c) go to directory where your code is available and openterminal 
+
+	1) compile all java files:
+   	   $ javac -classpath $HADOOP_HOME/hadoop-core.jar *.java
+
+	2) Create jar file: (hadoop can run or execute jar only)
+   	   $ jar cvf Driver.jar *.class
+
+	3) Running the jar file:
+   	   // hadoop jar "JarFileName.jar" "NameOfMainClassFile" "InputPathforFile(HDFS location)" "OutputPath in hdfs" 	
+   	   $ hadoop jar Driver.jar Driver /kb/wcinput.txt /wcoutput
+
+d) output available in hdfs "/wcoutput" directory contains file "part-r-00000" 
