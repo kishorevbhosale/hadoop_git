@@ -1,0 +1,18 @@
+Program for finding the maximum recorded temprature for year 2015 from NCDC weather records.
+
+I/P : Raw NCDC data. 
+     Consider input as text input format.
+ 
+Map : Data Preparation phase. It drop the bad records: filter out temp that are missing, suspect or erroneous.
+
+Reduce : Find out the maximum temp from all data provided by map function.
+
+O/P : Maximum global temprature recorded in year 2015.
+
+DataSet : you can download dataset from NCDC, http://www.ncdc.noaa.gov/ for any year.
+
+Compile and Run:
+1) create a jar file.
+2) put your dataset in hdfs
+3) run a jar. 
+ 
